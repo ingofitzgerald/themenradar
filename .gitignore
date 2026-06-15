@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Laufzeitdaten (Cache wird später optional versioniert)
+data/cache/
+data/runs/
+
+# Lokale Tests
+.pytest_cache/

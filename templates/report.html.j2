@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Themenradar – {{ report.report_date }}</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>WWF Themenradar</h1>
+      <p class="meta">
+        {{ report.organization_name }} · {{ report.report_date }}
+        {% if generated_time %}· Generiert um {{ generated_time }}{% endif %}
+      </p>
+    </header>
+
+    <section id="summary">
+      <h2>Executive Summary</h2>
+      <p class="summary-text">{{ report.executive_summary }}</p>
+    </section>
+
+    <section id="top-themen">
+      <h2>Top-Themen des Tages</h2>
+      <div class="topic-cards">
+        {% for topic in report.top_topics %}
+        <div class="topic-card">
+          <a href="#{{ topic.id }}">{{ topic.label }}</a>
+          <span class="score">{{ "%.1f"|format(topic.score) }}/10</span>
+        </div>
+        {% else %}
+        <p>Keine Themen verfügbar.</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="rankings">
+      <h2>Themen-Rankings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Thema</th>
+            <th>Gesamt</th>
+            <th>Medien</th>
+            <th>WWF</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for topic in report.topics %}
+          <tr>
+            <td><a href="#{{ topic.id }}">{{ topic.label }}</a></td>
+            <td>{{ "%.1f"|format(topic.overall_score) }}</td>
+            <td>{{ "%.1f"|format(topic.scores.media_attention) }}</td>
+            <td>{{ "%.1f"|format(topic.scores.wwf_relevance) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    {% for topic in report.topics %}
+    <section class="topic-section" id="{{ topic.id }}">
+      <div class="topic-header">
+        <h3>{{ topic.label }}</h3>
+        <span class="overall-badge">{{ "%.1f"|format(topic.overall_score) }}/10</span>
+      </div>
+
+      <dl class="meta-grid">
+        <div>
+          <dt>Artikel</dt>
+          <dd>{{ topic.article_count }}</dd>
+        </div>
+        <div>
+          <dt>Quellen</dt>
+          <dd>{{ topic.source_count }} ({{ topic.source_names | join(", ") }})</dd>
+        </div>
+        <div>
+          <dt>Quellentypen</dt>
+          <dd>
+            <span class="tags">
+              {% for t in topic.source_types %}
+              <span class="tag tag-{{ t }}">{{ t }}</span>
+              {% endfor %}
+            </span>
+          </dd>
+        </div>
+        <div>
+          <dt>Fokusbereiche</dt>
+          <dd>
+            <span class="tags">
+              {% for f in topic.focus_areas %}
+              <span class="tag tag-focus">{{ f }}</span>
+              {% endfor %}
+            </span>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="score-bars">
+        {% set score_items = [
+          ("WWF-Relevanz", topic.scores.wwf_relevance),
+          ("Medienaufmerksamkeit", topic.scores.media_attention),
+          ("Politische Relevanz", topic.scores.political_relevance),
+          ("Quellenpriorität", topic.scores.source_priority),
+          ("Quellenvielfalt", topic.scores.source_diversity),
+        ] %}
+        {% for label, value in score_items %}
+        <div class="score-row">
+          <span>{{ label }}</span>
+          <div class="score-bar">
+            <div class="score-bar-fill" style="width: {{ value | score_width }}%"></div>
+          </div>
+          <span>{{ "%.1f"|format(value) }}</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      <p><strong>Warum relevant:</strong> {{ topic.why_relevant }}</p>
+
+      {% if topic.narratives %}
+      <p><strong>Narrative:</strong></p>
+      <ul class="compact">
+        {% for n in topic.narratives %}<li>{{ n }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if topic.conflict_lines %}
+      <p><strong>Konfliktlinien:</strong></p>
+      <ul class="compact">
+        {% for c in topic.conflict_lines %}<li>{{ c }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+
+      <div class="press-box">
+        <h4>Pressechance</h4>
+        <dl>
+          <dt>Geschichte</dt>
+          <dd>{{ topic.press_opportunity.story }}</dd>
+          <dt>Perspektive</dt>
+          <dd>{{ topic.press_opportunity.perspective }}</dd>
+          <dt>Expertise</dt>
+          <dd>{{ topic.press_opportunity.experts }}</dd>
+          <dt>Anknüpfungspunkte</dt>
+          <dd>{{ topic.press_opportunity.regional_hooks }}</dd>
+        </dl>
+      </div>
+
+      {% if topic.risks %}
+      <p><strong>Risiken:</strong> {{ topic.risks | join(" · ") }}</p>
+      {% endif %}
+
+      <h4>Originalquellen</h4>
+      <ul class="sources-list">
+        {% for article in topic.articles %}
+        <li>
+          <a href="{{ article.url }}" target="_blank" rel="noopener">{{ article.title }}</a>
+          — {{ article.source_name }} ({{ article.source_type }})
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+
+    {% if report.warnings %}
+    <section class="warnings">
+      <h2>Hinweise</h2>
+      <ul>
+        {% for w in report.warnings %}<li>{{ w }}</li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    <footer>
+      WWF Themenradar · Automatisch generierter Pressebriefing
+    </footer>
+  </div>
+</body>
+</html>

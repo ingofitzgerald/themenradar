@@ -1,0 +1,69 @@
+name: Täglicher Themenradar
+
+on:
+  schedule:
+    # 06:00 MESZ (Sommer) / 05:00 MEZ (Winter) – Europe/Berlin
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Artikel-Cache wiederherstellen
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: article-cache-${{ hashFiles('config/sources.yaml') }}
+          restore-keys: |
+            article-cache-
+
+      - name: Feed-Validierung
+        run: python scripts/validate_feeds.py
+        continue-on-error: true
+
+      - name: Tages-Pipeline ausführen
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python -m src.main run
+
+      - name: Artikel-Cache speichern
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/cache
+          key: article-cache-${{ hashFiles('config/sources.yaml') }}
+
+      - name: GitHub Pages Artifact hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+      - name: GitHub Pages veröffentlichen
+        id: deploy
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-06-15T12:00:00+02:00",
+  "topic_count": 2,
+  "warnings": [],
+  "rankings": {
+    "top_by_overall": [
+      {"id": "topic-1", "label": "EU-Klimapolitik", "score": 8.5},
+      {"id": "topic-2", "label": "Artenschutz", "score": 6.2}
+    ],
+    "top_by_media_attention": [
+      {"id": "topic-1", "label": "EU-Klimapolitik", "score": 9.0}
+    ],
+    "top_by_wwf_relevance": [
+      {"id": "topic-2", "label": "Artenschutz", "score": 8.5}
+    ]
+  },
+  "topics": [
+    {
+      "id": "topic-1",
+      "label": "EU-Klimapolitik",
+      "article_count": 2,
+      "source_count": 2,
+      "source_names": ["Tagesschau", "Euractiv"],
+      "source_types": ["media"],
+      "focus_areas": ["climate", "eu_policy"],
+      "overall_score": 8.5,
+      "scores": {
+        "wwf_relevance": 9.0,
+        "media_attention": 9.0,
+        "political_relevance": 9.0,
+        "source_priority": 9.5,
+        "source_diversity": 2.5
+      },
+      "why_relevant": "Die EU-Klimapolitik dominiert die Tagesagenda.",
+      "narratives": ["Ambition vs. Umsetzung"],
+      "conflict_lines": ["Industrie vs. Klimaschutz"],
+      "target_media": ["Tagesschau"],
+      "press_opportunity": {
+        "story": "Umsetzungslücke in Deutschland",
+        "perspective": "WWF als Umsetzungsexperte",
+        "experts": "Klimapolitik-Referent/in",
+        "regional_hooks": "Bundesländer mit verfehlten Zielen"
+      },
+      "risks": ["Zu technisch"],
+      "evaluation_answers": {},
+      "articles": [
+        {
+          "title": "EU einigt sich auf Klimaziele",
+          "source_name": "Tagesschau",
+          "source_type": "media",
+          "url": "https://example.com/a1",
+          "published_at": "2026-06-15T08:00:00+02:00"
+        }
+      ]
+    },
+    {
+      "id": "topic-2",
+      "label": "Artenschutz",
+      "article_count": 1,
+      "source_count": 1,
+      "source_names": ["NABU"],
+      "source_types": ["ngo"],
+      "focus_areas": ["biodiversity"],
+      "overall_score": 6.2,
+      "scores": {
+        "wwf_relevance": 8.5,
+        "media_attention": 3.0,
+        "political_relevance": 5.0,
+        "source_priority": 7.0,
+        "source_diversity": 2.5
+      },
+      "why_relevant": "Artenschutzthema mit regionalem Bezug.",
+      "narratives": ["Rückkehr des Wolfes"],
+      "conflict_lines": [],
+      "target_media": ["Regionalmedien"],
+      "press_opportunity": {
+        "story": "Wolfsmanagement und Artenschutz",
+        "perspective": "WWF-Projekterfahrung",
+        "experts": "Artenschutz-Referent/in",
+        "regional_hooks": "Sachsen"
+      },
+      "risks": [],
+      "evaluation_answers": {},
+      "articles": [
+        {
+          "title": "Wolf in Sachsen gesichtet",
+          "source_name": "NABU",
+          "source_type": "ngo",
+          "url": "https://example.com/a3",
+          "published_at": "2026-06-15T10:00:00+02:00"
+        }
+      ]
+    }
+  ]
+}

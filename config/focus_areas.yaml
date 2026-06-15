@@ -1,0 +1,43 @@
+# Fokus-Vokabular für Quellen und Themen-Matching
+# Neue Begriffe hier dokumentieren, damit sources.yaml konsistent bleibt.
+
+focus_areas:
+  climate:
+    label: "Klima"
+    description: "Klimawandel, Emissionen, Klimapolitik, Hitzewellen"
+  biodiversity:
+    label: "Biodiversität"
+    description: "Artenvielfalt, Artensterben, Ökosysteme"
+  policy:
+    label: "Politik"
+    description: "Nationale Umwelt- und Klimapolitik"
+  eu_policy:
+    label: "EU-Politik"
+    description: "EU-Gesetzgebung, Kommission, Parlament"
+  environment:
+    label: "Umwelt"
+    description: "Allgemeine Umweltthemen, Umweltschutz"
+  science:
+    label: "Wissenschaft"
+    description: "Forschung, Studien, wissenschaftliche Erkenntnisse"
+  energy:
+    label: "Energie"
+    description: "Energiewende, Erneuerbare, Fossile Energien"
+  agriculture:
+    label: "Landwirtschaft"
+    description: "Nachhaltige Landwirtschaft, Agrarpolitik"
+  species:
+    label: "Arten"
+    description: "Artenschutz, bedrohte Arten"
+  ecosystems:
+    label: "Ökosysteme"
+    description: "Lebensräume, Ökosystemleistungen"
+  oceans:
+    label: "Meere"
+    description: "Meeresschutz, Ozeane, Küsten"
+  forests:
+    label: "Wälder"
+    description: "Waldschutz, Entwaldung, Forstwirtschaft"
+  conservation:
+    label: "Naturschutz"
+    description: "Schutzgebiete, Naturschutzprojekte"

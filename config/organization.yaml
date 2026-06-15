@@ -1,0 +1,94 @@
+# Organisationsprofil WWF Deutschland
+# Wird für die Bewertung von Anschlussfähigkeit und Pressechancen genutzt.
+
+name: "WWF Deutschland"
+
+mission: >
+  WWF Deutschland ist Teil des internationalen WWF-Netzwerks und setzt sich
+  für den Schutz der biologischen Vielfalt, den Erhalt natürlicher Lebensräume,
+  den Klimaschutz sowie die nachhaltige Nutzung natürlicher Ressourcen ein.
+  Der WWF arbeitet weltweit in Naturschutzprojekten und engagiert sich
+  gleichzeitig in Deutschland und Europa für wirksame Umwelt- und Klimapolitik.
+
+expertise:
+  - "Naturschutz"
+  - "Biodiversität"
+  - "Artenschutz"
+  - "Klimaschutz"
+  - "Klimapolitik"
+  - "EU-Umweltpolitik"
+  - "Waldschutz"
+  - "Meeresschutz"
+  - "Süßwasser- und Flussschutz"
+  - "Nachhaltige Landwirtschaft"
+  - "Nachhaltige Fischerei"
+  - "Rohstoffe und Lieferketten"
+  - "Entwaldung"
+  - "Naturbasierte Klimaschutzlösungen"
+  - "Transformation von Wirtschaft und Finanzsystem"
+
+regions:
+  - "Deutschland"
+  - "Europa"
+  - "Afrika"
+  - "Asien"
+  - "Lateinamerika"
+  - "Arktis"
+  - "Weltweit"
+
+project_types:
+  - "Artenschutzprojekte"
+  - "Schutzgebiete"
+  - "Waldschutzprojekte"
+  - "Meeresschutzprojekte"
+  - "Renaturierung"
+  - "Gemeindebasierter Naturschutz"
+  - "Klimaschutzprojekte"
+  - "Lieferketten- und Wirtschaftsprojekte"
+
+media_goals:
+  - "Naturschutzthemen in deutsche Medien bringen"
+  - "Politische Debatten mit wissenschaftlich fundierten Positionen begleiten"
+  - "Auf Umweltprobleme und Lösungsansätze aufmerksam machen"
+  - "Erfolge und Herausforderungen aus Naturschutzprojekten sichtbar machen"
+  - "Expertinnen und Experten des WWF als Ansprechpartner positionieren"
+
+high_relevance_signals:
+  - "Neue Umwelt- oder Klimapolitik"
+  - "EU-Gesetzgebung"
+  - "Internationale Umweltabkommen"
+  - "Artensterben"
+  - "Biodiversitätskrise"
+  - "Waldverlust"
+  - "Entwaldung"
+  - "Naturkatastrophen mit Umweltbezug"
+  - "Dürren"
+  - "Hitzewellen"
+  - "Hochwasser"
+  - "Meeresschutz"
+  - "Überfischung"
+  - "Landnutzungsänderungen"
+  - "Nachhaltige Landwirtschaft"
+  - "Unternehmensverantwortung"
+  - "Lieferketten"
+  - "Finanzierung von Umweltzerstörung"
+
+potential_story_angles:
+  - "Auswirkungen auf Natur und Biodiversität"
+  - "Auswirkungen auf Klima und Ökosysteme"
+  - "Politische Handlungsoptionen"
+  - "Praxisbeispiele aus WWF-Projekten"
+  - "Betroffene Arten oder Lebensräume"
+  - "Internationale Perspektive"
+  - "Wirtschaftliche Transformation"
+  - "Lösungsorientierte Ansätze"
+
+avoid:
+  - "Parteiendorsements"
+  - "Spekulationen ohne belastbare Daten"
+  - "Polemik gegen Einzelpersonen"
+  - "Nicht belegbare Behauptungen"
+
+tone: >
+  Sachlich, wissenschaftsbasiert, lösungsorientiert,
+  faktenorientiert, konstruktiv, glaubwürdig.

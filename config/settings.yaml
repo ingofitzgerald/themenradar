@@ -1,0 +1,33 @@
+lookback_hours: 24
+timezone: "Europe/Berlin"
+language: "de"
+
+report:
+  min_articles_per_topic: 1
+  max_topics: 15
+  top_topics_count: 5
+
+llm:
+  provider: "openai"
+  models:
+    article_analysis: "gpt-4o-mini"
+    clustering: "gpt-4o-mini"
+    topic_analysis: "gpt-4o-mini"
+    executive_summary: "gpt-4o-mini"
+  max_retries: 2
+  temperature: 0.3
+
+dedup:
+  title_similarity_threshold: 0.85
+
+scoring:
+  weights:
+    wwf_relevance: 0.30
+    media_attention: 0.25
+    political_relevance: 0.20
+    source_priority: 0.15
+    source_diversity: 0.10
+  high_priority_threshold: 8
+  media_attention:
+    objective_weight: 0.5
+    llm_weight: 0.5

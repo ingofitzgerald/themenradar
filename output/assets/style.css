@@ -1,0 +1,272 @@
+/* WWF Themenradar – statischer Tagesbericht */
+
+:root {
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #5c5c5c;
+  --accent: #1a6b40;
+  --accent-light: #e8f3ed;
+  --border: #e2e2de;
+  --press-bg: #fff8e6;
+  --press-border: #e6c200;
+  --tag-media: #2563eb;
+  --tag-science: #7c3aed;
+  --tag-policy: #b45309;
+  --tag-ngo: #15803d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+header {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+  color: var(--accent);
+}
+
+header .meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+section h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.summary-text {
+  font-size: 1.05rem;
+}
+
+.topic-cards {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.topic-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--accent-light);
+  border-radius: 6px;
+}
+
+.topic-card .score {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.topic-section {
+  scroll-margin-top: 1rem;
+}
+
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.topic-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.overall-badge {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.meta-grid dt {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.meta-grid dd {
+  margin: 0 0 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.tag-media { background: var(--tag-media); }
+.tag-science { background: var(--tag-science); }
+.tag-policy { background: var(--tag-policy); }
+.tag-ngo { background: var(--tag-ngo); }
+.tag-focus { background: #64748b; }
+
+.score-bars {
+  margin: 1rem 0;
+}
+
+.score-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 36px;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.88rem;
+}
+
+.score-bar {
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+.press-box {
+  background: var(--press-bg);
+  border: 1px solid var(--press-border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.press-box h4 {
+  margin: 0 0 0.75rem;
+  color: #92400e;
+}
+
+.press-box dl {
+  margin: 0;
+}
+
+.press-box dt {
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.press-box dd {
+  margin: 0.15rem 0 0;
+}
+
+ul.compact {
+  margin: 0.25rem 0;
+  padding-left: 1.25rem;
+}
+
+.sources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sources-list li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.sources-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sources-list a:hover {
+  text-decoration: underline;
+}
+
+.warnings {
+  color: #b45309;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
+
+@media print {
+  body { background: #fff; }
+  section { break-inside: avoid; }
+}
+
+@media (max-width: 600px) {
+  .topic-header { flex-direction: column; }
+  .score-row { grid-template-columns: 110px 1fr 30px; }
+}

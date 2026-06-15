@@ -1,0 +1,9 @@
+# Bewertungsfragen für die Themenanalyse (Phase 2)
+# Diese Fragen fließen in den LLM-Prompt und die Bewertung ein.
+
+evaluation_priorities:
+  - "Kann der WWF glaubwürdig Expertise beitragen?"
+  - "Gibt es einen Bezug zu WWF-Projekten?"
+  - "Gibt es einen Bezug zu WWF-Fachthemen?"
+  - "Gibt es politischen Handlungsbedarf?"
+  - "Ist das Thema für deutsche Medien relevant?"

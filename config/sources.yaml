@@ -1,0 +1,195 @@
+# RSS-Quellen für den WWF-Themenradar
+#
+# Typen:
+#   media   = Medien
+#   science = Wissenschaft / Fachbehörden
+#   policy  = Politik / Gesetzgebung
+#   ngo     = NGOs / Verbände
+#
+# priority: 1-10 (10 = besonders wichtig)
+#
+# source_role:
+#   agenda        = prägt die öffentliche Debatte
+#   early_warning = erkennt Themen vor der breiten Berichterstattung
+#   stakeholder   = relevante Akteure, Verbände, NGOs
+#
+# focus: Thematische Schwerpunkte (siehe config/focus_areas.yaml)
+#
+# Feed-URLs geprüft am 2026-06-15 mit scripts/validate_feeds.py
+
+sources:
+  # Medien (Agenda)
+  - name: Tagesschau
+    type: media
+    source_role: agenda
+    priority: 8
+    focus:
+      - climate
+      - biodiversity
+      - policy
+      - environment
+    feed_url: https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml
+
+  - name: Deutschlandfunk
+    type: media
+    source_role: agenda
+    priority: 8
+    focus:
+      - climate
+      - biodiversity
+      - policy
+      - science
+      - environment
+    feed_url: https://www.deutschlandfunk.de/nachrichten-100.rss
+
+  - name: Süddeutsche Zeitung
+    type: media
+    source_role: agenda
+    priority: 8
+    focus:
+      - climate
+      - biodiversity
+      - policy
+    feed_url: https://rss.sueddeutsche.de/rss/Alles
+
+  - name: DIE ZEIT
+    type: media
+    source_role: agenda
+    priority: 8
+    focus:
+      - climate
+      - biodiversity
+      - policy
+    feed_url: https://newsfeed.zeit.de/index
+
+  - name: taz
+    type: media
+    source_role: agenda
+    priority: 8
+    focus:
+      - climate
+      - biodiversity
+      - agriculture
+      - policy
+    feed_url: https://taz.de/rss.xml
+
+  - name: Klimareporter
+    type: media
+    source_role: early_warning
+    priority: 9
+    focus:
+      - climate
+      - energy
+      - policy
+    feed_url: https://www.klimareporter.de/?format=feed&type=rss
+
+  - name: Euractiv
+    type: media
+    source_role: early_warning
+    priority: 9
+    focus:
+      - eu_policy
+      - climate
+      - biodiversity
+    feed_url: https://www.euractiv.com/feed/
+
+  # Tagesspiegel Background hat keinen öffentlichen RSS-Feed (Paywall/Newsletter).
+  # Alternative: öffentlicher Tagesspiegel-Ressort-Feed Energie & Klima.
+  - name: Tagesspiegel Energie & Klima
+    type: media
+    source_role: early_warning
+    priority: 9
+    focus:
+      - climate
+      - energy
+      - policy
+      - eu_policy
+    feed_url: https://www.tagesspiegel.de/contentexport/feed/politik/energie-klima
+
+  # Wissenschaft & Behörden (Frühwarnsystem)
+  # UBA bietet aktuell keinen öffentlichen Presse-RSS-Feed.
+  # Alternative: BMUKN Klimaschutz-Feed des Bundesumweltministeriums.
+  - name: BMUKN Klimaschutz
+    type: policy
+    source_role: early_warning
+    priority: 10
+    focus:
+      - climate
+      - biodiversity
+      - environment
+      - policy
+    feed_url: https://www.bundesumweltministerium.de/klimaschutz.rss
+
+  - name: Bundesamt für Naturschutz
+    type: science
+    source_role: early_warning
+    priority: 10
+    focus:
+      - biodiversity
+      - species
+      - ecosystems
+    feed_url: https://www.bfn.de/feeds/news.rss
+
+  - name: scinexx
+    type: science
+    source_role: early_warning
+    priority: 7
+    focus:
+      - climate
+      - biodiversity
+      - environment
+    feed_url: https://www.scinexx.de/feed/
+
+  # Politik
+  - name: EU-Kommission Presse
+    type: policy
+    source_role: early_warning
+    priority: 9
+    focus:
+      - eu_policy
+      - climate
+      - biodiversity
+    feed_url: https://ec.europa.eu/commission/presscorner/api/rss
+
+  # NGOs / Stakeholder
+  # WWF International blockiert den RSS-Zugriff (403). Verfügbar: WWF DE Klima-Feed.
+  - name: WWF Deutschland Klima-News
+    type: ngo
+    source_role: stakeholder
+    priority: 8
+    focus:
+      - biodiversity
+      - climate
+      - oceans
+      - forests
+    feed_url: https://www.wwf.de/rss/feed-33698/feed.xml
+
+  - name: NABU
+    type: ngo
+    source_role: stakeholder
+    priority: 7
+    focus:
+      - biodiversity
+      - species
+      - conservation
+    feed_url: https://www.nabu.de/rssfeed.php
+
+  - name: BUND
+    type: ngo
+    source_role: stakeholder
+    priority: 7
+    focus:
+      - climate
+      - biodiversity
+      - policy
+    feed_url: https://www.bund.net/themen/aktuelles/rss.xml
+
+  - name: Greenpeace Deutschland
+    type: ngo
+    source_role: stakeholder
+    priority: 7
+    focus:
+      - climate
+      - oceans
+      - energy
+    feed_url: https://presseportal.greenpeace.de/press_releases.atom

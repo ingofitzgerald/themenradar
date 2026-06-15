@@ -1,0 +1,82 @@
+{
+  "generated_at": "2026-06-15T12:00:00+02:00",
+  "article_count": 4,
+  "articles": [
+    {
+      "id": "a1",
+      "title": "EU einigt sich auf Klimaziele",
+      "source_name": "Tagesschau",
+      "source_type": "media",
+      "published_at": "2026-06-15T08:00:00+02:00",
+      "description": "Beschreibung",
+      "url": "https://example.com/a1",
+      "source_priority": 8,
+      "source_focus": ["climate"],
+      "source_role": "agenda",
+      "analysis": {
+        "article_id": "a1",
+        "summary": "EU beschließt neue Klimaziele.",
+        "main_topics": ["EU-Klimapolitik"],
+        "keywords": ["EU", "Klima"],
+        "environmental_links": ["Klimaschutz"]
+      }
+    },
+    {
+      "id": "a2",
+      "title": "EU-Parlament stimmt Klimapaket zu",
+      "source_name": "Euractiv",
+      "source_type": "media",
+      "published_at": "2026-06-15T09:00:00+02:00",
+      "description": "Beschreibung",
+      "url": "https://example.com/a2",
+      "source_priority": 9,
+      "source_focus": ["eu_policy"],
+      "source_role": "early_warning",
+      "analysis": {
+        "article_id": "a2",
+        "summary": "EU-Parlament verabschiedet Klimapaket.",
+        "main_topics": ["EU-Klimapolitik"],
+        "keywords": ["EU", "Parlament"],
+        "environmental_links": ["Klimaschutz", "EU-Politik"]
+      }
+    },
+    {
+      "id": "a3",
+      "title": "Wolf in Sachsen gesichtet",
+      "source_name": "NABU",
+      "source_type": "ngo",
+      "published_at": "2026-06-15T10:00:00+02:00",
+      "description": "Beschreibung",
+      "url": "https://example.com/a3",
+      "source_priority": 7,
+      "source_focus": ["biodiversity"],
+      "source_role": "stakeholder",
+      "analysis": {
+        "article_id": "a3",
+        "summary": "Neuer Wolfssichtung in Sachsen.",
+        "main_topics": ["Artenschutz"],
+        "keywords": ["Wolf", "Sachsen"],
+        "environmental_links": ["Artenschutz"]
+      }
+    },
+    {
+      "id": "a4",
+      "title": "Bundesliga Ergebnisse",
+      "source_name": "taz",
+      "source_type": "media",
+      "published_at": "2026-06-15T11:00:00+02:00",
+      "description": "Beschreibung",
+      "url": "https://example.com/a4",
+      "source_priority": 8,
+      "source_focus": ["climate"],
+      "source_role": "agenda",
+      "analysis": {
+        "article_id": "a4",
+        "summary": "Fussballergebnisse der Bundesliga.",
+        "main_topics": ["Sport"],
+        "keywords": ["Fussball"],
+        "environmental_links": []
+      }
+    }
+  ]
+}
