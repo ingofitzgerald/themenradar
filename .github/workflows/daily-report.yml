@@ -1,9 +1,9 @@
 name: Täglicher Themenradar
 
 on:
-  schedule:
-    # 06:00 MESZ (Sommer) / 05:00 MEZ (Winter) – Europe/Berlin
-    - cron: "0 4 * * *"
+  # Täglicher Cron deaktiviert – nur manueller Start (workflow_dispatch)
+  # schedule:
+  #   - cron: "0 4 * * *"   # ca. 06:00 Europe/Berlin
   workflow_dispatch:
 
 permissions:

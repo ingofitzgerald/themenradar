@@ -12,7 +12,7 @@ Das System identifiziert täglich relevante Themen aus RSS-Feeds, clustert ähnl
 
 **HTML-Bericht und GitHub Actions + GitHub Pages eingerichtet**
 
-Der Workflow `.github/workflows/daily-report.yml` führt täglich die komplette Pipeline aus und veröffentlicht den Bericht auf GitHub Pages.
+Der Workflow `.github/workflows/daily-report.yml` führt die komplette Pipeline aus und veröffentlicht den Bericht auf GitHub Pages (aktuell nur manueller Start).
 
 ## Voraussetzungen
 
@@ -100,7 +100,7 @@ python -m src.main run --limit 5 --no-llm-summary
 3. Unter **Settings → Pages** als Quelle **GitHub Actions** wählen
 4. Workflow manuell testen: **Actions → Täglicher Themenradar → Run workflow**
 
-Der Workflow läuft täglich um ca. 06:00 Uhr (Europe/Berlin) per Cron (`0 4 * * *` UTC) und kann jederzeit per `workflow_dispatch` ausgelöst werden. Der Artikel-Cache (`data/cache/`) wird über `actions/cache` zwischen Läufen beibehalten.
+Der Workflow wird per **Run workflow** in GitHub Actions gestartet (`workflow_dispatch`). Der tägliche Cron ist deaktiviert (in der YAML auskommentiert). Der Artikel-Cache (`data/cache/`) wird über `actions/cache` zwischen Läufen beibehalten.
 
 Veröffentlichte URL: `https://<benutzer>.github.io/<repository>/`
 
